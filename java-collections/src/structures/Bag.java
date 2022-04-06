@@ -64,6 +64,13 @@ public class Bag implements ICollection
     @Override
     public boolean contains(Object element)
     {
+        for (int i = 0; i < nextIndex; i++)
+        {
+            if (data[i].equals(element)) //this will compare memory addresses of the objects
+            {
+                return true;
+            }
+        }
         return false;
     }
 
