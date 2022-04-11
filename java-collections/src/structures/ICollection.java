@@ -1,5 +1,12 @@
 package structures;
 
+/**
+ * This represents any type of data structure
+ * that stores elements.
+ *
+ * @author Josh
+ * @version 1.0
+ */
 public interface ICollection
 {
     /**
