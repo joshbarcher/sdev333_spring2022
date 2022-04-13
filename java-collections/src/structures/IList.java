@@ -1,5 +1,7 @@
 package structures;
 
+import java.util.Set;
+
 /**
  * This represents any list structure.
  * An IList is also an ICollection, where

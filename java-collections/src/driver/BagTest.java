@@ -6,7 +6,7 @@ public class BagTest
 {
     public static void main(String[] args)
     {
-        Bag bagOfColors = new Bag(5);
+        Bag<String> bagOfColors = new Bag<String>(5);
         System.out.println("Empty? " + bagOfColors.isEmpty());
 
         bagOfColors.add("red");

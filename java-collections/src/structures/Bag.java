@@ -1,11 +1,12 @@
 package structures;
 
 import java.util.Arrays;
+import java.util.Random;
 
-public class Bag implements ICollection
+public class Bag<T> implements ICollection<T>
 {
     //store our elements in an array
-    private Object[] data;
+    private T[] data;
     private int nextIndex = 0;
 
     public Bag(int capacity)
@@ -15,11 +16,13 @@ public class Bag implements ICollection
             throw new IllegalStateException("Capacity must be non-negative");
         }
 
-        data = new Object[capacity];
+        //workaround is to create an object array and cast it
+        //to a generic array (due to "type erasure")
+        data = (T[]) new Object[capacity];
     }
 
     @Override
-    public boolean add(Object element)
+    public boolean add(T element)
     {
         //is the bag full?
         if (nextIndex == data.length) {
@@ -62,7 +65,7 @@ public class Bag implements ICollection
     }
 
     @Override
-    public boolean contains(Object element)
+    public boolean contains(T element)
     {
         for (int i = 0; i < nextIndex; i++)
         {
@@ -75,7 +78,20 @@ public class Bag implements ICollection
     }
 
     @Override
-    public boolean remove(Object element)
+    public T random()
+    {
+        if (isEmpty())
+        {
+            return null;
+        }
+
+        Random random = new Random();
+        int randomIndex = random.nextInt(size());
+        return data[randomIndex];
+    }
+
+    @Override
+    public boolean remove(T element)
     {
         return false;
     }
