@@ -4,6 +4,7 @@ public class BinarySearchTree<T extends Comparable<T>> implements ITree<T>
 {
     //fields...
     private Node root;
+    private int size = 0;
 
     @Override
     public void add(T... elements)
@@ -19,9 +20,9 @@ public class BinarySearchTree<T extends Comparable<T>> implements ITree<T>
     {
         //start searching at the root for a place to
         //add the input parameter
+        int savedSize = size;
         root = add(root, element);
-
-        return false;
+        return savedSize != size; //make sense?
     }
 
     //add() is supported by a private recursive method
@@ -31,6 +32,7 @@ public class BinarySearchTree<T extends Comparable<T>> implements ITree<T>
         //put our new node)
         if (current == null)
         {
+            size++;
             return new Node(element);
         }
 

@@ -8,6 +8,6 @@ public class TestBST
     {
         BinarySearchTree<Integer> numTree = new BinarySearchTree<>();
 
-        numTree.add(42, 10, 55, 48);
+        numTree.add(42, 10, 55, 48, 41, 40, 55, 56, 72, 87);
     }
 }
