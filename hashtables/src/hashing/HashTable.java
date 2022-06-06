@@ -4,11 +4,11 @@ import java.util.Iterator;
 
 public class HashTable<T> implements IHashTable<T>
 {
-    private HashElement[] table;
+    private Element[] table;
 
     public HashTable()
     {
-        table = new HashElement[10];
+        table = new Element[10];
     }
 
     @Override
@@ -71,12 +71,12 @@ public class HashTable<T> implements IHashTable<T>
         return null;
     }
 
-    private static class HashElement<T>
+    private static class Element<T>
     {
         private T element;
         private boolean removed;
 
-        public HashElement(T element, boolean removed)
+        public Element(T element, boolean removed)
         {
             this.element = element;
             this.removed = removed;
