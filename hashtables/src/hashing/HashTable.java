@@ -118,5 +118,11 @@ public class HashTable<T> implements IHashTable<T>
             this.element = element;
             this.removed = removed;
         }
+
+        @Override
+        public String toString()
+        {
+            return element.toString();
+        }
     }
 }
